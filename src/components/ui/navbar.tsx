@@ -21,15 +21,15 @@ export default function Navbar() {
             <div className="sm:hidden">
               <button
                 type="button"
-                className="hs-collapse-toggle relative size-7 flex justify-center items-center gap-2 rounded-lg border border-gray-700 font-medium bg-gray-800 text-gray-400 shadow-sm align-middle hover:bg-gray-700/20 focus:outline-none focus:bg-gray-700/20 text-sm  "
+                className="hs-collapse-toggle relative size-7 flex justify-center dark:text-gray-800 text-white items-center gap-2 rounded-lg border border-gray-700 font-medium bg-gray-800   shadow-sm align-middle hover:bg-gray-700/20 focus:outline-none focus:bg-gray-700/20 text-sm  "
                 id="hs-navbar-dark-collapse"
                 aria-expanded="false"
                 aria-controls="hs-navbar-dark"
                 aria-label="Toggle navigation"
                 data-hs-collapse="#hs-navbar-dark"
               >
-                <AiOutlineMenu className="text-lg dark:text-gray-800 text-white hs-collapse-open:hidden shrink-0 size-4" />
-                <MdOutlineClear className="hs-collapse-open:block text-xl dark:text-gray-800 text-white hidden shrink-0 " />
+                <AiOutlineMenu className="text-lg  hs-collapse-open:hidden shrink-0 size-4" />
+                <MdOutlineClear className="hs-collapse-open:block text-xl   hidden shrink-0 " />
                 <span className="sr-only">Toggle</span>
               </button>
             </div>
