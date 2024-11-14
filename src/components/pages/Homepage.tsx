@@ -7,7 +7,7 @@ import Responsehistory from "../ui/responsehistory";
 
 export default function Homepage() {
   return (
-    <div className="w-full lg:flex space-y-10 lg:space-y-0 block items-start justify-between">
+    <div className="w-full lg:flex space-y-20 lg:space-y-0 block items-start justify-between">
       <div className="w-full lg:w-1/2 lg:p-10 ">
         <div className="flex justify-start  mt-8 lg:mt-0 ">
           <div className="flex bg-gray-100 hover:bg-gray-200 rounded-lg transition p-1 dark:bg-neutral-700 dark:hover:bg-neutral-600">
@@ -81,7 +81,7 @@ export default function Homepage() {
         </div>
       </div>
       {/* History Section */}
-      <div className="w-full lg:w-1/2 lg:p-10 ">
+      <div className="w-full lg:w-1/2   lg:mt-0 lg:p-10 ">
         <Responsehistory />
       </div>
     </div>

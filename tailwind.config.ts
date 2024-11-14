@@ -16,5 +16,9 @@ export default {
       },
     },
   },
-  plugins: [require("@tailwindcss/forms"), require("preline/plugin")],
+  plugins: [
+    require("@tailwindcss/forms"),
+    require("@tailwindcss/line-clamp"),
+    require("preline/plugin"),
+  ],
 } satisfies Config;

@@ -1,8 +1,9 @@
 "use client";
 import { useTheme } from "next-themes";
 import React from "react";
+import { AiOutlineMenu } from "react-icons/ai";
 import { FiMoon } from "react-icons/fi";
-import { MdOutlineWbSunny } from "react-icons/md";
+import { MdOutlineClear, MdOutlineWbSunny } from "react-icons/md";
 
 export default function Navbar() {
   const { theme, setTheme } = useTheme();
@@ -20,44 +21,15 @@ export default function Navbar() {
             <div className="sm:hidden">
               <button
                 type="button"
-                className="hs-collapse-toggle relative size-7 flex justify-center items-center gap-2 rounded-lg border border-gray-700 font-medium bg-gray-800 text-gray-400 shadow-sm align-middle hover:bg-gray-700/20 focus:outline-none focus:bg-gray-700/20 text-sm dark:bg-white dark:hover:bg-gray-100 dark:border-gray-200 dark:text-gray-600 dark:focus:bg-gray-100"
+                className="hs-collapse-toggle relative size-7 flex justify-center items-center gap-2 rounded-lg border border-gray-700 font-medium bg-gray-800 text-gray-400 shadow-sm align-middle hover:bg-gray-700/20 focus:outline-none focus:bg-gray-700/20 text-sm  "
                 id="hs-navbar-dark-collapse"
                 aria-expanded="false"
                 aria-controls="hs-navbar-dark"
                 aria-label="Toggle navigation"
                 data-hs-collapse="#hs-navbar-dark"
               >
-                <svg
-                  className="hs-collapse-open:hidden shrink-0 size-4"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <line x1="3" x2="21" y1="6" y2="6" />
-                  <line x1="3" x2="21" y1="12" y2="12" />
-                  <line x1="3" x2="21" y1="18" y2="18" />
-                </svg>
-                <svg
-                  className="hs-collapse-open:block hidden shrink-0 size-4"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M18 6 6 18" />
-                  <path d="m6 6 12 12" />
-                </svg>
+                <AiOutlineMenu className="text-lg dark:text-gray-800 text-white hs-collapse-open:hidden shrink-0 size-4" />
+                <MdOutlineClear className="hs-collapse-open:block text-xl dark:text-gray-800 text-white hidden shrink-0 " />
                 <span className="sr-only">Toggle</span>
               </button>
             </div>

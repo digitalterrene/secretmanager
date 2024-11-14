@@ -1,13 +1,22 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { HistoryEntry } from "@/types";
-import { getTimeAgo } from "../other/terminal/getTimeAgo";
 import { useHistory } from "@/context/HistoryContext";
 import { MdOutlineContentCopy } from "react-icons/md";
 
 export default function Responsehistory() {
   const { history, removeFromHistory } = useHistory();
+  const [notifications, setNotifications] = useState<any>([]);
 
+  const addNotification = (message: string, type: string) => {
+    const id = Math.random().toString(36).substring(2, 9);
+    setNotifications((prev: any) => [...prev, { id, message, type }]);
+  };
+
+  const removeNotification = (id: any) => {
+    setNotifications((prev: any) =>
+      prev.filter((notification: any) => notification.id !== id)
+    );
+  };
   // Function to handle copying text to the clipboard
   const handleCopy = (text: string) => {
     navigator.clipboard.writeText(text).then(
@@ -62,7 +71,7 @@ export default function Responsehistory() {
                     <div>
                       <div className=" items-center gap-x-2 py-1   text-sm   text-gray-800 -mt-px  first:mt-0 last:rounded-b-lg dark:border-neutral-700 dark:text-neutral-200">
                         <div className="flex items-start justify-between w-full">
-                          <p className="text-sm leading-6 text-gray-900 dark:text-white font-semibold select-none">
+                          <p className="text-sm leading-6 text-gray-900   font-semibold select-none">
                             Timestamp:{" "}
                             <span className="text-gray-600 font-normal">
                               {entry.timestamp}
@@ -79,7 +88,7 @@ export default function Responsehistory() {
                       </div>
                       <div className=" items-center gap-x-2 py-1  text-sm   text-gray-800 -mt-px  first:mt-0 last:rounded-b-lg dark:border-neutral-700 dark:text-neutral-200">
                         <div className="flex items-start justify-between w-full">
-                          <p className="text-sm leading-6 text-gray-900 dark:text-white font-semibold select-none">
+                          <p className="text-sm leading-6 text-gray-900  font-semibold select-none">
                             Phrase:{" "}
                             <span className="text-gray-600 font-normal">
                               {entry.phrase}
@@ -94,20 +103,20 @@ export default function Responsehistory() {
                           </button>
                         </div>
                       </div>
-                      <div className=" items-center gap-x-2 py-1   text-sm   text-gray-800 -mt-px  first:mt-0 last:rounded-b-lg dark:border-neutral-700 dark:text-neutral-200">
+                      <div className="items-center gap-x-2 py-1 w-full  text-sm text-gray-800 lg:-mt-px first:mt-0 last:rounded-b-lg dark:border-neutral-700 dark:text-neutral-200">
                         <div className="flex items-start justify-between w-full">
-                          <div>
-                            <p className="text-sm leading-6 text-gray-900 dark:text-white font-semibold select-none">
-                              Secret:{" "}
-                              <span className="text-gray-600 w-10/2 truncate text-ellipsis font-normal">
-                                {entry.secret}
-                              </span>
+                          <div className="lg:w-full w-1/2 flex items-center gap-2">
+                            <p className="text-sm leading-6  text-gray-900 font-semibold select-none">
+                              Secret:
+                            </p>{" "}
+                            <p className="text-gray-600 lg:w-10/12    font-normal  truncate overflow-hidden text-ellipsis whitespace-nowrap">
+                              {entry.secret}
                             </p>
                           </div>
                           <button
                             type="button"
                             onClick={() => handleCopy(entry.secret)}
-                            className="p-1 px-1.5   inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
+                            className="p-1 px-1.5 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
                           >
                             <MdOutlineContentCopy />
                           </button>
