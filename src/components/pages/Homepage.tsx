@@ -1,9 +1,10 @@
 "use client";
 import React, { useState } from "react";
-import Aichat from "../ui/aichat";
-import Terminal from "../ui/terminal";
 import Form from "../ui/form";
 import Responsehistory from "../ui/responsehistory";
+import TerminalIndex from "./terminal/Index";
+import AIChatIndex from "./ai-chat/Index";
+import { AIChat } from "../ai-chat";
 
 export default function Homepage() {
   return (
@@ -68,7 +69,7 @@ export default function Homepage() {
             role="tabpanel"
             aria-labelledby="segment-item-2"
           >
-            <Terminal />
+            <TerminalIndex />
           </div>
           <div
             id="segment-3"
@@ -76,7 +77,7 @@ export default function Homepage() {
             role="tabpanel"
             aria-labelledby="segment-item-3"
           >
-            <Aichat />
+            <AIChat onClose={() => {}} />
           </div>
         </div>
       </div>
