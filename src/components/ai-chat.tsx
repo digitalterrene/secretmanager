@@ -8,7 +8,6 @@ interface AIChatProps {
   onClose: () => void;
   initialMessage?: string;
 }
-
 export const AIChat = ({ onClose, initialMessage }: AIChatProps) => {
   const { theme } = useTheme();
   const [messages, setMessages] = useState<AIMessage[]>([]);
@@ -17,7 +16,7 @@ export const AIChat = ({ onClose, initialMessage }: AIChatProps) => {
   const [error, setError] = useState<string | null>(null);
   const [isTyping, setIsTyping] = useState(false);
   const [typedResponse, setTypedResponse] = useState("");
-  const scrollRef = useRef<HTMLDivElement>(null);
+  const scrollRef = useRef<HTMLUListElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const typingIntervalRef = useRef<NodeJS.Timeout>();
 
@@ -96,16 +95,6 @@ export const AIChat = ({ onClose, initialMessage }: AIChatProps) => {
       e.preventDefault();
       handleSendMessage();
     }
-  };
-
-  const handleNewChat = () => {
-    setMessages([]);
-    setTypedResponse("");
-    setError(null);
-    if (typingIntervalRef.current) {
-      clearInterval(typingIntervalRef.current);
-    }
-    setIsTyping(false);
   };
 
   useEffect(() => {
