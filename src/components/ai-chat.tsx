@@ -117,7 +117,7 @@ export const AIChat = ({ onClose, initialMessage }: AIChatProps) => {
   }, []);
 
   return (
-    <div className="relative flex flex-col justify-between border h-[70vh] p-4 rounded-xl">
+    <div className="relative flex flex-col  w-full justify-between border h-[70vh] p-4 rounded-xl">
       <ul className=" overflow-y-auto h-[90%] space-y-5" ref={scrollRef}>
         {/* Messages */}
         {messages.map((message) => (
@@ -248,7 +248,7 @@ export const AIChat = ({ onClose, initialMessage }: AIChatProps) => {
 
       {/* Input Area */}
       <div className=" z-10 mt-3 border-t border-gray-200 dark:bg-neutral-900 dark:border-neutral-700">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-0">
+        <div className=" w-full mx-auto px-4 sm:px-6 lg:px-0">
           <div className="flex justify-between items-center mb-3">
             {isLoading && (
               <button
@@ -277,7 +277,7 @@ export const AIChat = ({ onClose, initialMessage }: AIChatProps) => {
             )}
           </div>
 
-          <div className="relative">
+          <div className="relative  w-full">
             <textarea
               ref={inputRef}
               value={input}
