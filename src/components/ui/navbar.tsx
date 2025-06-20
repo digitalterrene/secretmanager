@@ -6,7 +6,7 @@ import { FiMoon } from "react-icons/fi";
 import { MdOutlineClear, MdOutlineWbSunny } from "react-icons/md";
 
 export default function Navbar() {
-  const { theme, setTheme } = useTheme();
+  const { setTheme } = useTheme();
   return (
     <div className="mx-auto">
       <header className="flex flex-wrap sm:justify-start sm:flex-nowrap container mx-auto w-full rounded-lg py-2 bg-[#040918] text-sm  dark:bg-white">
