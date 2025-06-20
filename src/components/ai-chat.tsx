@@ -114,7 +114,7 @@ export const AIChat = ({ onClose, initialMessage }: AIChatProps) => {
             {/* User Message */}
             {message.role === "user" && (
               <li key={message.id} className="py-2 sm:py-4 ml-auto ">
-                <div className="max-w-4xl px-4 sm:px-6    lg:px-8 mx-auto">
+                <div className="  px-4 sm:px-6    lg:px-8 mx-auto">
                   <div className="  flex justify-between gap-x-2 sm:gap-x-4">
                     <div className="grow mt-2 shadow bg-gray-100  w-full    rounded-xl  p-4 space-y-3">
                       <p className="text-gray-800 dark:text-neutral-200">
@@ -135,7 +135,7 @@ export const AIChat = ({ onClose, initialMessage }: AIChatProps) => {
             {message.role === "assistant" && (
               <li
                 key={message.id}
-                className="max-w-4xl py-2 px-4 sm:px-6 lg:px-8 mx-auto flex gap-x-2 sm:gap-x-4"
+                className="  py-2 px-4 sm:px-6 lg:px-8 mx-auto flex gap-x-2 sm:gap-x-4"
               >
                 <img
                   className="inline-block w-10 border shadow-lg mt-2 h-10 rounded-full"
