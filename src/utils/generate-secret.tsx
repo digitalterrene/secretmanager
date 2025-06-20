@@ -10,7 +10,7 @@ export async function generateSecret({
 }: GenerateSecretOptions): Promise<
   GenerateSecretResponse | GenerateSecretError
 > {
-  const url = "https://secretmanager-server.vercel.app/generate-secret";
+  const url = "/api/generate-secret";
 
   try {
     // Send a POST request to the server

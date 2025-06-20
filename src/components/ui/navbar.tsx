@@ -6,17 +6,17 @@ import { FiMoon } from "react-icons/fi";
 import { MdOutlineClear, MdOutlineWbSunny } from "react-icons/md";
 
 export default function Navbar() {
-  const { theme, setTheme } = useTheme();
+  const { setTheme } = useTheme();
   return (
     <div className="mx-auto">
-      <header className="flex flex-wrap sm:justify-start sm:flex-nowrap w-full rounded-lg bg-[#040918] text-sm py-1 dark:bg-white">
-        <nav className="max-w-[85rem] w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between">
+      <header className="flex flex-wrap sm:justify-start sm:flex-nowrap container mx-auto w-full rounded-lg py-2 bg-[#040918] text-sm  dark:bg-white">
+        <nav className=" w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between">
           <div className="flex items-center justify-between">
             <a
               className="flex-none text-xl font-semibold text-white focus:outline-none focus:opacity-80 dark:text-neutral-800"
               href="#"
             >
-              S&P Generator
+              Secret Key Generator
             </a>
             <div className="sm:hidden">
               <button
